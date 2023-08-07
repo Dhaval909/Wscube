@@ -1,0 +1,111 @@
+django works on model view templete(mvt).
+super use - admin pass admin
+
+
+dynamic routs making
+
+types
+
+int 
+str
+slug       hello-ws-lip          dased url
+
+path('courseDatalist/<datatype:name>',views.courseDatalist, name='courseDatalist'),
+path('courseDatalist/<int:courseid>',views.courseDatalist, name='courseDatalist'),   dynamic routs
+
+
+view                    
+def courseDatalist(request,courseid):
+    return HttpResponse()
+
+setting
+STATICFILES_DIRS =[
+    BASE_DIR/"static"
+]
+
+
+forloop in html
+ {% for n in clist %}
+    <div>{{n}}</div>
+    {% endfor %}
+   
+.revcounter,.first ,.last ,.
+
+    {% for n in clist %}
+    <div>{{forloop.counter}} {{n}}</div>
+    {% endfor %}
+
+ {% if numbers|length > 0 %}
+        {% for i in numbers %}
+
+            {% if i > 20 %}
+              <div>{{i}}</div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+          no data found
+    {% endif %}      
+
+includes--- need to call all page 
+
+    {% include "header.html" %}
+    {% include "footer.html" %}
+
+navbar control-------1) href="/about"    create url and view request.
+                     2) href="{% url 'nameinurl,py' %}" EX.---href="{% url 'contactus' %}"
+
+
+extends---- need to create base file and put header footer in it
+            it must be written in first line in index html otherwise throw error.
+
+base.ht-----{% include "header.html" %}
+
+            {% block content %}
+
+
+            {% endblock %}
+
+
+            {% include "footer.html" %}
+
+index----{% extends "base.html" %}
+            {% block content %}
+            {% endblock %}
+
+active link in navbar STATIC MRTOD------write in li==={{request.path}}
+                                       write in a or li class==={% if request.path == '/contactus/' %} active {% endif %}
+                               {% if request.path == '/' %} active {% endif %} ==for home.
+
+second method type before li=={% url 'about' as url %} here we take url as variable of aboutas.
+                           then link href=={{% url %}}
+                           then write in li or a class={% if request.path == url %} active {% endif %}
+
+                       (input-name)
+GET  n1 = request.GET['num-1']   value GET mate
+        n2 = request.GET['num-2']
+        print(n1 + n2)
+
+         n1 = request.GET.get('num-1')  value get and disply
+
+
+from django.http import HttpResponse,HttpResponseRedirect
+         return HttpResponseRedirect('/contactus/')
+
+
+
+         widget=forms.Textarea(attrs={'class':'form-control'})
+
+
+
+ <!-- <img src="/static/imags/Ford-Logo-1917.png" class="img-fluid w-25" alt=""> -->
+
+
+
+     serdata=Service.objects.all().order_by('-service_title')[1:3]
+
+get data of Service.objects.all()- get all data of objects
+2)== order_by("field name" )=== it perform accending 
+2)== order_by("-field name ")=== it perform dccending 
+3===slicing for limited Service.
+
+

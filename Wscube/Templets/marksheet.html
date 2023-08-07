@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact-us</title>
+</head>
+<body> -->
+<main class="container">
+    <!-- <div class="row d-flex justify-content-center"> -->
+    <div class="bg-body-tertiary p-5 rounded">
+        <h1 class="text-center">MarkSheet</h1>
+
+
+    </div>
+    <!-- </div> -->
+    <div class="row">
+        <div class="col-12">
+
+            <form action="{% url 'marksheet' %}" method="post">
+                {% csrf_token %}
+
+                <div>
+                    <label for="">Subject-1</label>
+                    <input type="text" name="m1" class="form-control">
+                    <label for="">Subject-2</label>
+                    <input type="text" name="m2" class="form-control">
+                    <label for="">Subject-3</label>
+                    <input type="text" name="m3" class="form-control">
+                    <label for="">Subject-4</label>
+                    <input type="text" name="m4" class="form-control">
+                    <label for="">Subject-5</label>
+                    <input type="text" name="m5" class="form-control">
+
+                    <div class="pt-2">
+                        <button type="submit" class="btn btn-outline-primary">MarkSheet</button>
+                    </div>
+                    <br>
+                    <label for="">Total:</label>
+                    <input type="text" class="form-control" value="{{total}}">
+                    <label for="">Percentage:</label>
+                    <input type="text" class="form-control" value="{{per}}">
+                    <!-- <label for="">:</label>
+                    <input type="text" class="form-control" value="{{c}}"> -->
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

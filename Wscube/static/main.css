@@ -1,0 +1,16 @@
+a:link,a:visited{
+    background-color: rgb(247, 181, 16);
+    color: black;
+    text-decoration: none;
+    padding: 9px 9px;
+    /* text-align: right; */
+    display: inline;
+ }
+ 
+ a:hover{
+    background-color: rgb(14, 247, 216);
+    text-decoration: underline;
+ }
+ body{
+   background-color: red;
+ }

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact-us</title>
+</head>
+<body> -->
+<main class="container">
+    <!-- <div class="row d-flex justify-content-center"> -->
+    <div class="bg-body-tertiary p-5 rounded">
+        <h1 class="text-center">Calculator</h1>
+
+
+    </div>
+    <!-- </div> -->
+    <div class="row">
+        <div class="col-12">
+
+            <form action="{% url 'calculator' %}" method="post">
+                {% csrf_token %}
+
+                <div>
+                    <label for="">Value 1</label>
+                    <input type="text" name="num-1" class="form-control">
+
+                    <label for="">Select Operator</label>
+                    <select name="opr" class="form-control">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="x">x</option>
+                        <option value="%">/</option>
+                    </select>
+                    <label for="">Value 2</label>
+                    <input type="text" name="num-2" class="form-control">
+                    <!-- <div class="pt-2">
+                        <button type="submit" class="btn btn-outline-primary">+</button>
+                        <button type="submit" class="btn btn-outline-primary">-</button>
+                        <button type="submit" class="btn btn-outline-primary">x</button>
+                        <button type="submit" class="btn btn-outline-primary">%</button>
+                    </div> -->
+                    <div class="pt-2">
+                        <button type="submit" class="btn btn-outline-success">Calculate</button>
+                    </div>
+                    <br>
+                    <label for="">Output:</label>
+                    <input type="text" class="form-control" value="{{c}}">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

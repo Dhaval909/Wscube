@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="display: block; text-align: center;"> {{newsdetails.news_title | safe}} </h1>
+<p> {{newsdetails.news_desc | safe}} </p>
+
+{% endblock %}
